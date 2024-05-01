@@ -23,7 +23,7 @@ if args.cmd == "labelsOlder":
     for label, ageHours in objectStore.labelsOlder(args.hours).iteritems():
         if regex.search(label) is None:
             continue
-        print "%s: %d hours old" % (label, ageHours)
+        print(f"{label}: {ageHours} hours old")
 elif args.cmd == "eraseLabelsOlder":
     objectStore = objectstore.ObjectStore(args.objectStore)
     regex = re.compile(args.regex)
